@@ -2,8 +2,95 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaUser, FaEnvelope, FaComment } from "react-icons/fa";
 import { useLanguage } from "@/app/context/LanguageContext";
+
+const FloatingLabelInput = ({ 
+  id, 
+  name, 
+  value, 
+  onChange, 
+  placeholder, 
+  type = "text", 
+  error, 
+  icon 
+}: { 
+  id: string; 
+  name: string; 
+  value: string; 
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void; 
+  placeholder: string; 
+  type?: string;
+  error?: string;
+  icon: React.ReactNode;
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const isActive = isFocused || value.length > 0;
+
+  if (name === "message") {
+    return (
+      <div className="relative">
+        <label 
+          htmlFor={id} 
+          className={`absolute left-12 transition-all duration-200 ${
+            isActive 
+              ? 'transform -translate-y-6 text-xs text-blue-600 dark:text-blue-400' 
+              : 'transform translate-y-2 text-gray-500'
+          }`}
+        >
+          {placeholder}
+        </label>
+        <div className="absolute left-4 top-4 text-gray-400">
+          {icon}
+        </div>
+        <textarea
+          id={id}
+          name={name}
+          value={value}
+          onChange={onChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          rows={5}
+          className={`w-full border rounded-lg px-4 py-3 pt-6 pl-12 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            error ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
+          } bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
+        />
+        {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative">
+      <label 
+        htmlFor={id} 
+        className={`absolute left-12 transition-all duration-200 ${
+          isActive 
+            ? 'transform -translate-y-6 text-xs text-blue-600 dark:text-blue-400' 
+            : 'transform translate-y-2 text-gray-500'
+        }`}
+      >
+        {placeholder}
+      </label>
+      <div className="absolute left-4 top-3.5 text-gray-400">
+        {icon}
+      </div>
+      <input
+        type={type}
+        id={id}
+        name={name}
+        value={value}
+        onChange={onChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        className={`w-full border rounded-lg px-4 py-3 pt-6 pl-12 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          error ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'
+        } bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
+      />
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+    </div>
+  );
+};
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -86,12 +173,32 @@ const Contact = () => {
   // Show a simple placeholder while waiting for client-side hydration
   if (!mounted) {
     return (
-      <section id="contact" className="w-full bg-[#fdf8f2] dark:bg-gray-900 py-20 px-6">
-        <div className="max-w-5xl mx-auto">
+      <section id="contact" className="w-full bg-gradient-to-tr from-blue-50 to-slate-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-white">
               {t("contact.title")}
             </h2>
+            <p className="text-gray-600 dark:text-gray-400">
+              {t("contact.subtitle") || "Get in touch"}
+            </p>
+          </div>
+          
+          {/* Form placeholder to prevent layout shift */}
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8">
+            <div className="space-y-6">
+              {/* Name field placeholder */}
+              <div className="h-16 bg-gray-100 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+              
+              {/* Email field placeholder */}
+              <div className="h-16 bg-gray-100 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+              
+              {/* Message field placeholder */}
+              <div className="h-40 bg-gray-100 dark:bg-gray-700 rounded-lg animate-pulse"></div>
+              
+              {/* Submit button placeholder */}
+              <div className="h-12 w-full sm:w-40 bg-blue-500/50 dark:bg-blue-700/50 rounded-full mx-auto"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -99,11 +206,18 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="w-full bg-[#fdf8f2] dark:bg-gray-900 py-20 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="contact" className="w-full bg-gradient-to-tr from-blue-50 to-slate-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4">
+      <motion.div 
+        className="max-w-3xl mx-auto px-4 py-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
@@ -115,12 +229,13 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="lg:flex gap-8 items-start">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Contact Form */}
           <motion.div 
-            className="lg:flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8 lg:mb-0"
+            className="lg:flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {isSubmitted ? (
@@ -154,87 +269,76 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t("contact.form.name")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-2 border ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
-                    placeholder={t("contact.form.name")}
-                  />
-                  {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
-                </div>
+                <FloatingLabelInput
+                  id="name"
+                  name="name"
+                  value={formState.name}
+                  onChange={handleChange}
+                  placeholder={t("contact.form.name")}
+                  error={errors.name}
+                  icon={<FaUser />}
+                />
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t("contact.form.email")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-2 border ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
-                </div>
+                <FloatingLabelInput
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  placeholder={t("contact.form.email")}
+                  error={errors.email}
+                  icon={<FaEnvelope />}
+                />
                 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    {t("contact.form.message")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formState.message}
-                    onChange={handleChange}
-                    rows={5}
-                    className={`w-full px-4 py-2 border ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white`}
-                    placeholder={t("contact.form.message")}
-                  />
-                  {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
-                </div>
+                <FloatingLabelInput
+                  id="message"
+                  name="message"
+                  value={formState.message}
+                  onChange={handleChange}
+                  placeholder={t("contact.form.message")}
+                  error={errors.message}
+                  icon={<FaComment />}
+                />
                 
-                <button
+                <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className={`w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
                   {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
-                </button>
+                </motion.button>
               </form>
             )}
           </motion.div>
           
           {/* WhatsApp Button - Side on desktop, below on mobile */}
           <motion.div
-            className="lg:w-60 flex flex-col items-center justify-center"
+            className="flex flex-col gap-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <a
-              href="https://wa.me/212612267326"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
-            >
-              <FaWhatsapp className="text-xl" />
-              <span>{t("contact.whatsapp")}</span>
-            </a>
-            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
-              {t("contact.whatsappNote")}
-            </p>
+            <div className="group relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-green-400 to-green-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
+              <a
+                href="https://wa.me/212612267326"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center gap-3 bg-gradient-to-r from-green-400 to-green-600 text-white font-bold py-6 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 group-hover:scale-[1.01]"
+              >
+                <FaWhatsapp className="text-2xl" />
+                <span>{t("contact.whatsapp")}</span>
+              </a>
+              <div className="invisible group-hover:visible absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mt-1 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                {t("contact.whatsappNote")}
+              </div>
+            </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

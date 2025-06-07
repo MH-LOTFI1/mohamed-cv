@@ -8,19 +8,23 @@
   },
   "about": {
     "title": "About Me",
-    "text": "Student at ENSA Tangier, passionate about development and AI. Through my academic journey, I've developed rigor, autonomy and creativity. I master AI as a powerful tool to innovate and solve concrete problems."
+    "text": [
+      "I'm currently a student at ENSA Tangier — not because I dreamed of becoming an engineer, but because I knew I needed an environment that matched my mindset. After the cybersecurity & networks program I was in got canceled, and a disappointing year at FP Larache, I decided to shift toward something I could truly enjoy and grow in.",
+      "My passion lies in cybersecurity and AI. I love building digital tools — websites, apps, scripts — and automating tasks using AI tools like ChatGPT and Cursor. I don't just use them to build — I use them to learn. They've helped me realize that with a basic understanding and a hands-on mindset, you can build almost anything.",
+      "My goal is to become one of the best at using AI to build things, solve problems, automate work, and earn a living efficiently. I work fast, think sharp, and sometimes act recklessly — but I learn from every step, and I'm always moving forward toward what's next."
+    ]
   },
   "skills": {
     "title": "Skills & Abilities",
     "technical": {
-      "title": "Technical Skills (AI-Augmented)",
+      "title": "Technical Skills",
       "items": [
-        "AI-Powered Development: ChatGPT & Cursor AI for designing and debugging real projects",
-        "General knowledge of HTML, CSS, JavaScript, React Native, Firebase, Supabase",
-        "Build real mobile apps using AI guidance",
-        "Familiar with Tailwind CSS, GitHub, Expo, and Vercel deployment",
-        "Able to understand problems and guide AI to implement solutions",
-        "Self-taught with strong documentation & learning ability"
+        "Proficient in building web & mobile interfaces using AI-assisted tools (Cursor AI, ChatGPT)",
+        "Confident understanding of web fundamentals: HTML, CSS, JS, React Native, Tailwind",
+        "Able to ship functional apps (e.g. to-do list, filters, swipe actions) using Expo and Supabase",
+        "Strong grasp of Git, version control, and deploying with Vercel",
+        "Excel at learning new tools through AI-powered \"learn by doing\"",
+        "Approach problem-solving by combining logic with AI-enhanced iteration"
       ]
     },
     "languages": {
@@ -34,12 +38,12 @@
     "soft": {
       "title": "Soft Skills",
       "items": [
-        "Autonomy & initiative",
-        "Fast learning and adaptability",
-        "Organization and time management",
-        "Clear team communication",
-        "Analytical thinking & problem solving",
-        "AI-assisted productivity"
+        "Self-driven and proactive: turn ideas into working solutions",
+        "Curious and fast learner, thrives with hands-on practice",
+        "Time-conscious and able to organize solo or team work",
+        "Communicate clearly and confidently (verbal and written)",
+        "Resilient: learns from mistakes, adapts fast",
+        "Obsessed with doing more with less using automation and AI"
       ]
     }
   },
@@ -51,7 +55,13 @@
       {"year": "2023", "title": "1st year Computer Development & DevOps Methods License", "description": "FP Larache"},
       {"year": "2022", "title": "Bachelor in Cybersecurity & Network/Systems Administration", "description": "(discontinued in S2)"},
       {"year": "2021", "title": "Baccalaureate in Physical & Chemical Sciences (SPC)", "description": ""}
-    ]
+    ],
+    "tooltips": {
+      "current": "Current education path",
+      "started": "Where my journey began",
+      "discontinued": "A change of direction",
+      "milestone": "Educational milestone"
+    }
   },
   "contact": {
     "title": "Contact",

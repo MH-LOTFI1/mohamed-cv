@@ -6,10 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "lighthouse": "npx lighthouse-ci https://localhost:3000 --config=./.lighthouserc.js",
+    "measure-vitals": "npx web-vitals"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.4",
     "framer-motion": "^12.16.0",
+    "lucide-react": "^0.513.0",
     "next": "15.3.3",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
@@ -20,9 +25,12 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@next/bundle-analyzer": "^15.3.3",
     "autoprefixer": "^10.4.21",
+    "lighthouse-ci": "^0.2.2",
     "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5",
+    "web-vitals": "^3.5.2"
   }
 }

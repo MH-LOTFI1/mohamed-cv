@@ -8,19 +8,23 @@
   },
   "about": {
     "title": "À propos de moi",
-    "text": "Étudiant à l'ENSA de Tanger, passionné par le développement et l'IA. Grâce à mon parcours académique, j'ai développé rigueur, autonomie et créativité. Je maîtrise l'IA comme un outil puissant pour innover et résoudre des problèmes concrets."
+    "text": [
+      "Actuellement étudiant à l'ENSA de Tanger, j'ai rejoint cette école non pas par rêve d'être ingénieur, mais parce que j'ai toujours su où je voulais vraiment évoluer. Après l'arrêt de ma filière en Cybersécurité et Réseaux, et une année peu convaincante à la faculté de Larache, j'ai décidé de me former dans un environnement plus stimulant, tout en continuant à apprendre par moi-même.",
+      "Passionné par la cybersécurité et l'intelligence artificielle, je m'intéresse profondément à la création de solutions digitales (sites, apps, scripts) et à l'automatisation de tâches. J'utilise des outils comme ChatGPT et Cursor AI non seulement pour coder, mais pour apprendre plus vite et développer des projets concrets avec moins d'effort. Mon objectif : devenir l'un des meilleurs à exploiter l'IA pour construire, automatiser et réussir.",
+      "Je crois fermement qu'avec une compréhension de base, un bon outil et la bonne question, on peut tout apprendre par la pratique. J'avance vite, parfois de manière impulsive, mais toujours avec détermination et lucidité. Je suis là pour construire mon futur, à ma manière."
+    ]
   },
   "skills": {
     "title": "Compétences",
     "technical": {
-      "title": "Compétences techniques (Augmentées par l'IA)",
+      "title": "Compétences techniques",
       "items": [
-        "Développement assisté par IA: ChatGPT & Cursor AI pour concevoir et déboguer des projets réels",
-        "Connaissances générales en HTML, CSS, JavaScript, React Native, Firebase, Supabase",
-        "Création d'applications mobiles réelles avec l'aide de l'IA",
-        "Familier avec Tailwind CSS, GitHub, Expo, et déploiement sur Vercel",
-        "Capacité à comprendre les problèmes et guider l'IA pour implémenter des solutions",
-        "Autodidacte avec forte capacité de documentation et d'apprentissage"
+        "Compétent dans la création d'interfaces web et mobile avec des outils assistés par IA (Cursor AI, ChatGPT)",
+        "Bonne compréhension des fondamentaux du web: HTML, CSS, JS, React Native, Tailwind",
+        "Capable de livrer des applications fonctionnelles (listes de tâches, filtres, actions par glissement) avec Expo et Supabase",
+        "Maîtrise solide de Git, de la gestion de versions et du déploiement avec Vercel",
+        "Excelle dans l'apprentissage de nouveaux outils grâce à la méthode \"apprendre en faisant\" assistée par IA",
+        "Aborde la résolution de problèmes en combinant logique et itération améliorée par l'IA"
       ]
     },
     "languages": {
@@ -34,12 +38,12 @@
     "soft": {
       "title": "Compétences douces",
       "items": [
-        "Autonomie et initiative",
-        "Apprentissage rapide et adaptabilité",
-        "Organisation et gestion du temps",
-        "Communication claire en équipe",
-        "Pensée analytique et résolution de problèmes",
-        "Productivité assistée par IA"
+        "Autonome et proactif: transforme les idées en solutions fonctionnelles",
+        "Curieux et apprend rapidement, s'épanouit dans la pratique",
+        "Conscient du temps et capable d'organiser le travail solo ou en équipe",
+        "Communique clairement et avec assurance (verbal et écrit)",
+        "Résilient: apprend de ses erreurs, s'adapte rapidement",
+        "Obsédé par l'idée de faire plus avec moins grâce à l'automatisation et l'IA"
       ]
     }
   },
@@ -51,7 +55,13 @@
       {"year": "2023", "title": "1ère année Licence Développement Informatique & Méthodes DevOps", "description": "FP Larache"},
       {"year": "2022", "title": "Bachelor Cybersécurité & Administration Réseaux/Systèmes", "description": "(filière arrêtée en S2)"},
       {"year": "2021", "title": "Baccalauréat Sciences Physiques & Chimiques (SPC)", "description": ""}
-    ]
+    ],
+    "tooltips": {
+      "current": "Formation actuelle",
+      "started": "Où mon parcours a commencé",
+      "discontinued": "Un changement de direction",
+      "milestone": "Étape éducative importante"
+    }
   },
   "contact": {
     "title": "Contact",
