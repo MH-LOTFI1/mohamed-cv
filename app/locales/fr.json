@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Étudiant ingénieur",
+    "subtitle": "1ère année – ENSA Tanger",
+    "tagline": "Passionné par le développement, l'IA, et la création de solutions numériques intelligentes.",
+    "downloadCV": "Télécharger CV",
+    "contactMe": "Me contacter"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "text": "Étudiant à l'ENSA de Tanger, passionné par le développement et l'IA. Grâce à mon parcours académique, j'ai développé rigueur, autonomie et créativité. Je maîtrise l'IA comme un outil puissant pour innover et résoudre des problèmes concrets."
+  },
+  "skills": {
+    "title": "Compétences",
+    "technical": {
+      "title": "Compétences techniques (Augmentées par l'IA)",
+      "items": [
+        "Développement assisté par IA: ChatGPT & Cursor AI pour concevoir et déboguer des projets réels",
+        "Connaissances générales en HTML, CSS, JavaScript, React Native, Firebase, Supabase",
+        "Création d'applications mobiles réelles avec l'aide de l'IA",
+        "Familier avec Tailwind CSS, GitHub, Expo, et déploiement sur Vercel",
+        "Capacité à comprendre les problèmes et guider l'IA pour implémenter des solutions",
+        "Autodidacte avec forte capacité de documentation et d'apprentissage"
+      ]
+    },
+    "languages": {
+      "title": "Langues",
+      "items": [
+        {"language": "Arabe", "level": "Natif", "percent": 100},
+        {"language": "Anglais", "level": "Avancé (C1)", "percent": 85},
+        {"language": "Français", "level": "Élémentaire (A2)", "percent": 40}
+      ]
+    },
+    "soft": {
+      "title": "Compétences douces",
+      "items": [
+        "Autonomie et initiative",
+        "Apprentissage rapide et adaptabilité",
+        "Organisation et gestion du temps",
+        "Communication claire en équipe",
+        "Pensée analytique et résolution de problèmes",
+        "Productivité assistée par IA"
+      ]
+    }
+  },
+  "education": {
+    "title": "Éducation",
+    "items": [
+      {"year": "2024–2025", "title": "ENSA Tanger", "description": "1er cycle préparatoire"},
+      {"year": "2024", "title": "Baccalauréat Sciences Mathématiques (SM)", "description": "candidat libre"},
+      {"year": "2023", "title": "1ère année Licence Développement Informatique & Méthodes DevOps", "description": "FP Larache"},
+      {"year": "2022", "title": "Bachelor Cybersécurité & Administration Réseaux/Systèmes", "description": "(filière arrêtée en S2)"},
+      {"year": "2021", "title": "Baccalauréat Sciences Physiques & Chimiques (SPC)", "description": ""}
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Prenons contact — envoyez-moi un message ou contactez-moi sur WhatsApp.",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé!",
+      "thanks": "Merci de m'avoir contacté. Je vous répondrai bientôt!",
+      "another": "Envoyer un autre message"
+    },
+    "whatsapp": "WhatsApp moi",
+    "whatsappNote": "Pour des réponses rapides, n'hésitez pas à me contacter directement sur WhatsApp."
+  },
+  "footer": {
+    "builtWith": "Créé avec",
+    "allRights": "Tous droits réservés."
+  },
+  "languageSwitcher": {
+    "fr": "FR",
+    "en": "EN"
+  }
+} 

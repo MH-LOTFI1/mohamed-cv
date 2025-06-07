@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "title": "Engineering Student",
+    "subtitle": "1st year – ENSA Tangier",
+    "tagline": "Passionate about development, AI, and building smart digital solutions.",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "Student at ENSA Tangier, passionate about development and AI. Through my academic journey, I've developed rigor, autonomy and creativity. I master AI as a powerful tool to innovate and solve concrete problems."
+  },
+  "skills": {
+    "title": "Skills & Abilities",
+    "technical": {
+      "title": "Technical Skills (AI-Augmented)",
+      "items": [
+        "AI-Powered Development: ChatGPT & Cursor AI for designing and debugging real projects",
+        "General knowledge of HTML, CSS, JavaScript, React Native, Firebase, Supabase",
+        "Build real mobile apps using AI guidance",
+        "Familiar with Tailwind CSS, GitHub, Expo, and Vercel deployment",
+        "Able to understand problems and guide AI to implement solutions",
+        "Self-taught with strong documentation & learning ability"
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "items": [
+        {"language": "Arabic", "level": "Native", "percent": 100},
+        {"language": "English", "level": "Advanced (C1)", "percent": 85},
+        {"language": "French", "level": "Elementary (A2)", "percent": 40}
+      ]
+    },
+    "soft": {
+      "title": "Soft Skills",
+      "items": [
+        "Autonomy & initiative",
+        "Fast learning and adaptability",
+        "Organization and time management",
+        "Clear team communication",
+        "Analytical thinking & problem solving",
+        "AI-assisted productivity"
+      ]
+    }
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {"year": "2024–2025", "title": "ENSA Tangier", "description": "1st preparatory cycle"},
+      {"year": "2024", "title": "Baccalaureate in Mathematical Sciences (SM)", "description": "independent candidate"},
+      {"year": "2023", "title": "1st year Computer Development & DevOps Methods License", "description": "FP Larache"},
+      {"year": "2022", "title": "Bachelor in Cybersecurity & Network/Systems Administration", "description": "(discontinued in S2)"},
+      {"year": "2021", "title": "Baccalaureate in Physical & Chemical Sciences (SPC)", "description": ""}
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's get in touch — send me a message or reach out on WhatsApp.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message Sent!",
+      "thanks": "Thank you for reaching out. I'll get back to you soon!",
+      "another": "Send another message"
+    },
+    "whatsapp": "WhatsApp me",
+    "whatsappNote": "For quick responses, feel free to reach out directly on WhatsApp."
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "allRights": "All rights reserved."
+  },
+  "languageSwitcher": {
+    "fr": "FR",
+    "en": "EN"
+  },
+  "hello": "Hello",
+  "home": "Home"
+} 
