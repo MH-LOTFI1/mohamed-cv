@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { LanguageProvider } from "./context/LanguageContext";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 // Optimize font loading with display:swap to prevent CLS
 const geistSans = Geist({
@@ -63,6 +65,19 @@ export default function RootLayout({
             </div>
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6FK0MJEXTM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-setup" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6FK0MJEXTM');
+          `}
+        </Script>
       </body>
     </html>
   );

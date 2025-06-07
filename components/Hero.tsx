@@ -161,6 +161,15 @@ const Hero = () => {
                 className="inline-flex items-center justify-center bg-blue-600 text-white font-medium py-3 px-8 rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition duration-300 text-center"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  // Track CV download event with Google Analytics
+                  if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+                    (window as any).gtag('event', 'cv_download', {
+                      event_category: 'engagement',
+                      event_label: 'PDF Download',
+                    });
+                  }
+                }}
               >
                 <FaFileDownload className="mr-2" />
                 {t("hero.downloadCV")}
